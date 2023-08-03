@@ -288,7 +288,6 @@ class Root extends Component {
 
   render() {
     if (!this.state.now) return <p id="wait">{this.state.waitMessage}</p>
-    console.log(this.state.alerts)
     return (
       <Fragment>
         <main>
