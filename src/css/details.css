@@ -1,14 +1,14 @@
 #temperature {
   font: var(--font-serif);
   font-size: 7em;
-  padding-left: 0.333em;
+  padding-left: 0.28em;
 }
 
 #temperature sup {
   font-size: 0.3em;
   position: relative;
   top: -0.7em;
-  left: -0.4em;
+  left: -0.1em;
 }
 
 #first table {
@@ -31,23 +31,18 @@
   text-align: right;
 }
 
-#second table {
-  border-top: 1px solid var(--BR);
-  border-collapse: collapse;
-}
-
 #middle {
   border-top: 1px solid var(--BR);
 }
 
-#second table img {
-  width: 60%;
+#second table {
+  width: 100%;
+  border-top: 1px solid var(--BR);
+  border-collapse: collapse;
 }
 
-#second table tr {
-  width: 100%;
-  display: table;
-  table-layout: fixed;
+#second table img {
+  width: 50%;
 }
 
 #second table td + td {
@@ -61,39 +56,33 @@
 }
 
 #alerts {
+  width: 100%;
   padding: 0.5em;
-  overflow: scroll;
   border: 1px solid var(--BR);
 }
+
 
 #alerts > p {
   margin-bottom: 0.5em;
   text-align: center;
 }
 
-#alerts details summary {
+.individual-alert {
+  display: flex;
+}
+
+.individual-alert > p{
+  min-width: 9em;
+}
+
+details {
   cursor: pointer;
 }
 
-#alerts details summary .left {
-  width: 9em;
-  font-weight: 700;
-  display: inline-block;
+.hidden {
+  font-size: 0.7em;
+  margin: 0.3em 0;
 }
-
-#alerts details summary .right {
-  display: block;
-  padding-left: 9.5em;
-}
-
-
-#alerts details .hidden {
-  font-size: 0.8em;
-  padding-left: 12.35em;
-  padding-right: 2em;
-  margin: 1em 0;
-}
-
 
 #text-description {
   font: var(--font-serif);

@@ -63,7 +63,7 @@ class Model {
             this.state.now.textDescription = j.properties.textDescription
             this.state.now.temperature = j.properties.temperature.value
             this.state.now.temperatureUnit = 'C'
-            this.state.now.icon = j.properties.icon
+            this.state.now.icon = j.properties.icon ? j.properties.icon : './icon.svg'
             this.state.now.lastUpdate = new Date()
             this.state.now.timestamp = new Date(j.properties.timestamp)
             this.state.now.elevation = `${j.properties.elevation.value} metres`

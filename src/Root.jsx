@@ -51,8 +51,6 @@ class Root extends Component {
   }
 
   cleanLink(url) {
-    if (url == null)
-      return '/icon.svg'
     let ret = ''
     let toCopy = true
     for (let i = 0; i < url.length; i++) {
@@ -141,15 +139,13 @@ class Root extends Component {
     for (let i = 0; i < ret.length; i++) {
       cur = this.state.alerts.features[i].properties
       ret[i] = (
-        <details key={i}>
-          <summary>
-            <span className="left">
-              {cur.severity} {cur.messageType}:
-            </span>
-            <span className="right">{cur.headline}</span>
-          </summary>
-          <p className="hidden">{cur.instruction}.</p>
-        </details>
+        <div key={i} className="individual-alert">
+          <p>{cur.severity} {cur.messageType}</p>
+          <details>
+            <summary>{cur.headline}</summary>
+            <p className="hidden">{cur.instruction}.</p>
+          </details>
+        </div>
       )
     }
     return (
@@ -292,6 +288,7 @@ class Root extends Component {
 
   render() {
     if (!this.state.now) return <p id="wait">{this.state.waitMessage}</p>
+    console.log(this.state.alerts)
     return (
       <Fragment>
         <main>
